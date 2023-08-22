@@ -41,12 +41,12 @@ module T = {
   @deriving(abstract)
   type iLocale = {
     name: string,
-    weekdays?: array<string>,
-    months?: array<string>,
-    weekStart?: array<string>,
-    monthShort?: array<string>,
-    weekdaysMin?: array<string>,
-    @as("ordinal") unsafe_ordinal?: (~n: int) => ordinal,
+    @optional weekdays?: array<string>,
+    @optional months?: array<string>,
+    @optional weekStart?: array<string>,
+    @optional monthShort?: array<string>,
+    @optional weekdaysMin?: array<string>,
+    @optional @as("ordinal") unsafe_ordinal?: (~n: int) => ordinal,
     //    formats: {
     //   LT: string
     //   LTS: string
@@ -55,7 +55,7 @@ module T = {
     //   LLL: string
     //   LLLL: string
     //    },
-    relativeTime?: relativeTime,
+    @optional relativeTime?: relativeTime,
   }
   type rec dayJs = {
     clone: (. unit) => dayJs,

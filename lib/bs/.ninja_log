@@ -34,3 +34,13 @@
 25	42	1692689163601033459	types/dayjs/src/Dayjs.cmj	8b4b0899a4a71ecf
 25	42	1692689163601033459	types/dayjs/src/Dayjs.cmi	8b4b0899a4a71ecf
 25	42	1692689163601033459	../../types/dayjs/src/Dayjs.bs.js	8b4b0899a4a71ecf
+0	13	1692689427757682292	types/dayjs/src/Dayjs.ast	6f0d843fbb598a9d
+13	23	1692689427757682292	types/dayjs/src/Dayjs.d	40ce7db9419b4c74
+23	39	1692689427757682292	types/dayjs/src/Dayjs.cmj	8b4b0899a4a71ecf
+23	39	1692689427757682292	types/dayjs/src/Dayjs.cmi	8b4b0899a4a71ecf
+23	39	1692689427757682292	../../types/dayjs/src/Dayjs.bs.js	8b4b0899a4a71ecf
+0	12	1692689433588343693	types/dayjs/src/Dayjs.ast	6f0d843fbb598a9d
+12	20	1692689433588343693	types/dayjs/src/Dayjs.d	40ce7db9419b4c74
+20	33	1692689433588343693	types/dayjs/src/Dayjs.cmj	8b4b0899a4a71ecf
+20	33	1692689433588343693	types/dayjs/src/Dayjs.cmi	8b4b0899a4a71ecf
+20	33	1692689433588343693	../../types/dayjs/src/Dayjs.bs.js	8b4b0899a4a71ecf
