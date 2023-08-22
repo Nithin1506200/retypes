@@ -3,8 +3,8 @@ rule cp
   command = cp $i $out
 rule touch
  command = touch $out
-o dayjs_.cmi : cp ../bs/types/dayjs/dayjs_.cmi
-o dayjs_.cmj : cp ../bs/types/dayjs/dayjs_.cmj
-o dayjs_.cmt : cp ../bs/types/dayjs/dayjs_.cmt
-o dayjs_.res : cp ../../types/dayjs/dayjs_.res
-build install.stamp : touch dayjs_.cmi dayjs_.cmj 
+o Dayjs.cmi : cp ../bs/types/dayjs/src/Dayjs.cmi
+o Dayjs.cmj : cp ../bs/types/dayjs/src/Dayjs.cmj
+o Dayjs.cmt : cp ../bs/types/dayjs/src/Dayjs.cmt
+o Dayjs.res : cp ../../types/dayjs/src/Dayjs.res
+build install.stamp : touch Dayjs.cmi Dayjs.cmj 

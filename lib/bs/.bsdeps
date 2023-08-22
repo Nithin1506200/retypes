@@ -1,8 +1,9 @@
 10.1.4
-/Users/nithin.n/Documents/Nithin_github/rescript-types
+/Users/nithin.n/Documents/Nithin_github/retypes
 0
-bsconfig.json	0x1.938d261cp+30
-types	0x1.938d216cp+30
-types/dayjs	0x1.938d622cp+30
+bsconfig.json	0x1.93914bb4p+30
+types	0x1.93914bb4p+30
+types/dayjs	0x1.939174d8p+30
+types/dayjs/src	0x1.939187fcp+30
 ===
-/Users/nithin.n/Documents/Nithin_github/rescript-types/node_modules/rescript/darwinarm64/rescript.exe	0x1.9391432p+30
+/Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/rescript.exe	0x1.93918c2cp+30

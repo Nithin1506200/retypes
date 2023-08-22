@@ -1,13 +1,13 @@
 rescript = 1
 rule astj
-  command = /Users/nithin.n/Documents/Nithin_github/rescript-types/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.4  -absname -bs-ast -o $out $i
-o types/dayjs/dayjs_.ast : astj ../../types/dayjs/dayjs_.res
+  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.4  -absname -bs-ast -o $out $i
+o types/dayjs/src/Dayjs.ast : astj ../../types/dayjs/src/Dayjs.res
 rule deps
-  command = /Users/nithin.n/Documents/Nithin_github/rescript-types/node_modules/rescript/darwinarm64/bsb_helper.exe -hash d7e58999fe0b5b7aadf48ddd0cccba6f $in
+  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsb_helper.exe -hash 2ee7705156a808df4887827bccde711c $in
   restat = 1
-o types/dayjs/dayjs_.d : deps types/dayjs/dayjs_.ast
+o types/dayjs/src/Dayjs.d : deps types/dayjs/src/Dayjs.ast
 rule mij
-  command = /Users/nithin.n/Documents/Nithin_github/rescript-types/node_modules/rescript/darwinarm64/bsc.exe -I types/dayjs -I types   -bs-package-name your-project-name -bs-package-output es6:$in_d:.bs.js $i
+  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsc.exe -I types/dayjs/src -I types/dayjs -I types   -bs-package-name your-project-name -bs-package-output es6:$in_d:.bs.js $i
   dyndep = 1
   restat = 1
-o types/dayjs/dayjs_.cmj types/dayjs/dayjs_.cmi ../../types/dayjs/dayjs_.bs.js : mij types/dayjs/dayjs_.ast
+o types/dayjs/src/Dayjs.cmj types/dayjs/src/Dayjs.cmi ../../types/dayjs/src/Dayjs.bs.js : mij types/dayjs/src/Dayjs.ast
