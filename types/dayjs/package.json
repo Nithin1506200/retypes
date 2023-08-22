@@ -1,6 +1,6 @@
 {
   "name": "@retypes/dayjs",
-  "version": "0.0.4",
+  "version": "0.0.55",
   "description": "dayjs type binding for rescript",
   "main": "src/Dayjs.res",
   "scripts": {

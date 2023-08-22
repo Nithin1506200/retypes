@@ -7,7 +7,7 @@ rule deps
   restat = 1
 o types/dayjs/src/Dayjs.d : deps types/dayjs/src/Dayjs.ast
 rule mij
-  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsc.exe -I types/dayjs/src -I types/dayjs -I types   -bs-package-name your-project-name -bs-package-output es6:$in_d:.bs.js $i
+  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsc.exe -I types/dayjs/lib/bs/src -I types/dayjs/lib/bs -I types/dayjs/lib -I types/dayjs/src -I types/dayjs -I types   -bs-package-name your-project-name -bs-package-output es6:$in_d:.bs.js $i
   dyndep = 1
   restat = 1
 o types/dayjs/src/Dayjs.cmj types/dayjs/src/Dayjs.cmi ../../types/dayjs/src/Dayjs.bs.js : mij types/dayjs/src/Dayjs.ast

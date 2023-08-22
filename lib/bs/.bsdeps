@@ -3,7 +3,10 @@
 0
 bsconfig.json	0x1.93914bb4p+30
 types	0x1.93914bb4p+30
-types/dayjs	0x1.93919abp+30
+types/dayjs	0x1.9391ebccp+30
 types/dayjs/src	0x1.939187fcp+30
+types/dayjs/lib	0x1.9391a6fcp+30
+types/dayjs/lib/bs	0x1.9391a6fcp+30
+types/dayjs/lib/bs/src	0x1.9391a6fcp+30
 ===
-/Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/rescript.exe	0x1.93919f4cp+30
+/Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/rescript.exe	0x1.9391ee1p+30

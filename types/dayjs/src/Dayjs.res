@@ -1,4 +1,6 @@
+//
 module T = {
+  type dayjs
   type unitTypeShort = [#d | #D | #M | #m | #y | #h | #s | #ms]
   type unitTypeLong = [#millisecond | #second | #minute | #hour | #day | #month | #year | #date]
   type unitTypeLongPlural = [
@@ -12,11 +14,12 @@ module T = {
     | #dates
   ]
   type unitType = [unitTypeShort | unitTypeLong | unitTypeLongPlural]
+  type configType
 
   type opUnitType = [unitType | #week | #weeks | #w]
   type manipulateType = [opUnitType]
   type qUnitType = [unitType | #quarter | #quarters | #Q]
-  type configType
+
   type ordinal
   type relativeTime = {
     "future": string,
@@ -33,6 +36,21 @@ module T = {
     "M": string,
     "MM": string,
   }
+  @deriving(abstract)
+  type formats = {
+    @optional
+    "LT": string,
+    @optional
+    "LTS": string,
+    @optional
+    "L": string,
+    @optional
+    "LL": string,
+    @optional
+    "LLL": string,
+    @optional
+    "LLLL": string,
+  }
   /**
   this is abstract
   @example : 
@@ -47,16 +65,10 @@ module T = {
     @optional monthShort?: array<string>,
     @optional weekdaysMin?: array<string>,
     @optional @as("ordinal") unsafe_ordinal?: (~n: int) => ordinal,
-    //    formats: {
-    //   LT: string
-    //   LTS: string
-    //   L: string
-    //   LL: string
-    //   LLL: string
-    //   LLLL: string
-    //    },
+    @optional formats?: formats,
     @optional relativeTime?: relativeTime,
   }
+
   type rec dayJs = {
     clone: (. unit) => dayJs,
     isValid: (. unit) => bool,
@@ -83,7 +95,7 @@ module T = {
     startOf: (. ~unit: opUnitType) => dayJs,
     endOf: (. ~unit: opUnitType) => dayJs,
     format: (. ~template: string=?) => string,
-    //    diff:(~date: configType=?, ~unit: qUnitType | opUnitType=?, float?: boolean): number,
+    diff: (. ~date: configType=?, ~unit: [qUnitType | opUnitType]=?, ~float: bool=?) => int,
     valueOf: (. unit) => int,
     unix: (. unit) => int,
     daysInMonth: (. unit) => int,
@@ -96,6 +108,26 @@ module T = {
     isSame: (. ~date: configType=?, ~unit: opUnitType=?) => bool,
     isAfter: (. ~date: configType=?, ~unit: opUnitType=?) => bool,
     @as("locale") unsafe_locale: (. ~preset: string, ~object: iLocale) => dayJs,
+  }
+}
+module Utils = {
+  type rec configTypeEnum =
+    | String(string)
+    | Number(int)
+    | Date(Js.Date.t)
+    | DayJs(T.dayjs)
+    | Null
+    | Undefined
+  external convertToConfigType: 'a => T.configType = "%identity"
+  let configTypeBuilder: configTypeEnum => T.configType = x => {
+    switch x {
+    | String(s) => convertToConfigType(s)
+    | Number(i) => convertToConfigType(i)
+    | Date(d) => convertToConfigType(d)
+    | DayJs(d) => convertToConfigType(d)
+    | Null => convertToConfigType(Js.null)
+    | Undefined => convertToConfigType(Js.undefined)
+    }
   }
 }
 @module("dayjs") @val external dayJs: 'a => T.dayJs = "dayjs"
