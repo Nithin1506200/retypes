@@ -1,0 +1,17 @@
+{
+  "name": "rescript-types",
+  "version": "1.0.0",
+  "description": "rescript types ",
+  "main": "index.js",
+  "scripts": {
+    "res:dev": "rescript build -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.5.1",
+    "dayjs": "^1.11.9",
+    "rescript": "^10.1.4"
+  }
+}

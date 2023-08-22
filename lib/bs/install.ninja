@@ -1,0 +1,10 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o dayjs_.cmi : cp ../bs/types/dayjs/dayjs_.cmi
+o dayjs_.cmj : cp ../bs/types/dayjs/dayjs_.cmj
+o dayjs_.cmt : cp ../bs/types/dayjs/dayjs_.cmt
+o dayjs_.res : cp ../../types/dayjs/dayjs_.res
+build install.stamp : touch dayjs_.cmi dayjs_.cmj 
