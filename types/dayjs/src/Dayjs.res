@@ -1,4 +1,4 @@
-module DayJs = {
+
   module T = {
     type unitTypeShort = [#d | #D | #M | #m | #y | #h | #s | #ms]
     type unitTypeLong = [#millisecond | #second | #minute | #hour | #day | #month | #year | #date]
@@ -97,4 +97,4 @@ module DayJs = {
   @module("dayjs") @val external dayJs: 'a => T.dayJs = "dayjs"
   @module("dayjs") @val external isDayjs: (. unit) => bool = "isDayjs"
   @module("dayjs") @val external unix: int => T.dayJs = "unix"
-}
+
