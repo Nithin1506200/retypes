@@ -130,6 +130,6 @@ module Utils = {
     }
   }
 }
-@module("dayjs") @val external dayJs: 'a => T.dayJs = "dayjs"
+@module("dayjs") @val external dayJs: T.configType => T.dayJs = "dayjs"
 @module("dayjs") @val external isDayjs: (. unit) => bool = "isDayjs"
 @module("dayjs") @val external unix: int => T.dayJs = "unix"

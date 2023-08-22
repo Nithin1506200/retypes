@@ -18,7 +18,8 @@
 # usage
 
 ```ts
-let x = Dayjs.dayJs("dfs")
+let configs = Dayjs.Utils.configTypeBuilder(String("fsfasd"))
+let x = Dayjs.dayJs(configs)
 let il: Dayjs.T.iLocale = Dayjs.T.iLocale(~name="nithin", ())
 let m = x.unsafe_locale(. ~preset="sfs", ~object=il)
 ```
