@@ -1,12 +1,15 @@
-10.1.4
+11.0.0-rc.3
 /Users/nithin.n/Documents/Nithin_github/retypes
 0
 bsconfig.json	0x1.93914bb4p+30
-types	0x1.93914bb4p+30
-types/dayjs	0x1.93923f08p+30
-types/dayjs/src	0x1.939187fcp+30
+types	0x1.93e0a5ecp+30
+types/dayjs	0x1.93e11b2p+30
+types/dayjs/src	0x1.93e0a554p+30
 types/dayjs/lib	0x1.9391a6fcp+30
 types/dayjs/lib/bs	0x1.93923ef4p+30
 types/dayjs/lib/bs/src	0x1.9391a6fcp+30
+types/daterangepicker	0x1.93dbca9cp+30
+types/daterangepicker/src	0x1.93e6fae8p+30
+types/moment	0x1.93e65c58p+30
 ===
-/Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/rescript.exe	0x1.93923fbcp+30
+/Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/rescript.exe	0x1.93fbdf04p+30

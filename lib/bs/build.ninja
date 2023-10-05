@@ -1,13 +1,19 @@
 rescript = 1
 rule astj
-  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.4  -absname -bs-ast -o $out $i
+  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 11.0.0-rc.3 -uncurried  -absname -bs-ast -o $out $i
 o types/dayjs/src/Dayjs.ast : astj ../../types/dayjs/src/Dayjs.res
 rule deps
-  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsb_helper.exe -hash 2ee7705156a808df4887827bccde711c $in
+  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsb_helper.exe -hash 060b11fbb94f2c278f99c609a6f6fd67 $in
   restat = 1
 o types/dayjs/src/Dayjs.d : deps types/dayjs/src/Dayjs.ast
 rule mij
-  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsc.exe -I types/dayjs/lib/bs/src -I types/dayjs/lib/bs -I types/dayjs/lib -I types/dayjs/src -I types/dayjs -I types   -bs-package-name your-project-name -bs-package-output es6:$in_d:.bs.js $i
+  command = /Users/nithin.n/Documents/Nithin_github/retypes/node_modules/rescript/darwinarm64/bsc.exe -I types/moment -I types/daterangepicker/src -I types/daterangepicker -I types/dayjs/lib/bs/src -I types/dayjs/lib/bs -I types/dayjs/lib -I types/dayjs/src -I types/dayjs -I types   -uncurried -bs-package-name your-project-name -bs-package-output es6:$in_d:.bs.js $i
   dyndep = 1
   restat = 1
 o types/dayjs/src/Dayjs.cmj types/dayjs/src/Dayjs.cmi ../../types/dayjs/src/Dayjs.bs.js : mij types/dayjs/src/Dayjs.ast
+o types/daterangepicker/src/Daterangepicker.ast : astj ../../types/daterangepicker/src/Daterangepicker.res
+o types/daterangepicker/src/Daterangepicker.d : deps types/daterangepicker/src/Daterangepicker.ast
+o types/daterangepicker/src/Daterangepicker.cmj types/daterangepicker/src/Daterangepicker.cmi ../../types/daterangepicker/src/Daterangepicker.bs.js : mij types/daterangepicker/src/Daterangepicker.ast
+o types/moment/Moment.ast : astj ../../types/moment/Moment.res
+o types/moment/Moment.d : deps types/moment/Moment.ast
+o types/moment/Moment.cmj types/moment/Moment.cmi ../../types/moment/Moment.bs.js : mij types/moment/Moment.ast

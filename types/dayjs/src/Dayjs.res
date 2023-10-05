@@ -70,44 +70,44 @@ module T = {
   }
 
   type rec dayJs = {
-    clone: (. unit) => dayJs,
-    isValid: (. unit) => bool,
+    clone: unit => dayJs,
+    isValid: unit => bool,
     //   year: (. unit) => int,
-    year: (. int) => dayJs,
+    year: int => dayJs,
     //   month: (. number) => dayjs,
-    month: (. unit) => int,
+    month: unit => int,
     //   date: (. int) => dayJs,
-    date: (. unit) => int,
+    date: unit => int,
     //   day: (. int) => dayJs,
-    day: (. unit) => int,
+    day: unit => int,
     //    hour: (. unit) => int,
-    hour: (. unit) => int,
+    hour: unit => int,
     //   minute: (. unit) => int,
-    minute: (. unit) => int,
+    minute: unit => int,
     //   second: (. unit) => int,
-    second: (. unit) => int,
+    second: unit => int,
     //   millisecond: (. unit) => int,
-    millisecond: (. unit) => int,
-    set: (. ~unit: unitType, ~value: int) => dayJs,
-    get: (. ~unit: unitType) => int,
-    add: (. ~value: int, ~unit: manipulateType=?) => dayJs,
-    subtract: (. ~value: int, ~unit: manipulateType=?) => dayJs,
-    startOf: (. ~unit: opUnitType) => dayJs,
-    endOf: (. ~unit: opUnitType) => dayJs,
-    format: (. ~template: string=?) => string,
-    diff: (. ~date: configType=?, ~unit: [qUnitType | opUnitType]=?, ~float: bool=?) => int,
-    valueOf: (. unit) => int,
-    unix: (. unit) => int,
-    daysInMonth: (. unit) => int,
-    toDate: (. unit) => string,
-    toJSON: (. unit) => string,
-    toISOString: (. unit) => string,
-    toString: (. unit) => string,
-    utcOffset: (. unit) => int,
-    isBefore: (. ~date: configType=?, ~unit: opUnitType=?) => bool,
-    isSame: (. ~date: configType=?, ~unit: opUnitType=?) => bool,
-    isAfter: (. ~date: configType=?, ~unit: opUnitType=?) => bool,
-    @as("locale") unsafe_locale: (. ~preset: string, ~object: iLocale) => dayJs,
+    millisecond: unit => int,
+    set: (~unit: unitType, ~value: int) => dayJs,
+    get: (~unit: unitType) => int,
+    add: (~value: int, ~unit: manipulateType=?) => dayJs,
+    subtract: (~value: int, ~unit: manipulateType=?) => dayJs,
+    startOf: (~unit: opUnitType) => dayJs,
+    endOf: (~unit: opUnitType) => dayJs,
+    format: (~template: string=?) => string,
+    diff: (~date: configType=?, ~unit: [qUnitType | opUnitType]=?, ~float: bool=?) => int,
+    valueOf: unit => int,
+    unix: unit => int,
+    daysInMonth: unit => int,
+    toDate: unit => string,
+    toJSON: unit => string,
+    toISOString: unit => string,
+    toString: unit => string,
+    utcOffset: unit => int,
+    isBefore: (~date: configType=?, ~unit: opUnitType=?) => bool,
+    isSame: (~date: configType=?, ~unit: opUnitType=?) => bool,
+    isAfter: (~date: configType=?, ~unit: opUnitType=?) => bool,
+    @as("locale") unsafe_locale: (~preset: string, ~object: iLocale) => dayJs,
   }
 }
 module Utils = {
@@ -131,5 +131,7 @@ module Utils = {
   }
 }
 @module("dayjs") @val external dayJs: T.configType => T.dayJs = "dayjs"
-@module("dayjs") @val external isDayjs: (. unit) => bool = "isDayjs"
+@module("dayjs") @val external isDayjs: unit => bool = "isDayjs"
 @module("dayjs") @val external unix: int => T.dayJs = "unix"
+
+//number or string

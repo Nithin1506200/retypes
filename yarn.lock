@@ -12,7 +12,7 @@ dayjs@^1.11.9:
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.9.tgz#9ca491933fadd0a60a2c19f6c237c03517d71d1a"
   integrity sha512-QvzAURSbQ0pKdIye2txOzNaHmxtUBXerpY0FJsFXUMKbIZeFm5ht1LS/jFsrncjnmtv8HsG0W2g6c0zUjZWmpA==
 
-rescript@^10.1.4:
-  version "10.1.4"
-  resolved "https://registry.yarnpkg.com/rescript/-/rescript-10.1.4.tgz#0f37710d371f32a704f17b4e804f66ce3c79a305"
-  integrity sha512-FFKlS9AG/XrLepWsyw7B+A9DtQBPWEPDPDKghV831Y2KGbie+eeFBOS0xtRHp0xbt7S0N2Dm6hhX+kTZQ/3Ybg==
+rescript@^11.0.0-rc.3:
+  version "11.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/rescript/-/rescript-11.0.0-rc.3.tgz#1f6cd6a6f0169ef29a9675e5436f3cb587b795a8"
+  integrity sha512-JLwGwRYiJbSwJMc2oOzU9dRCTuitpIYU0Z6Wm9Ig0K9/mSyg3b6d/wXRq3EL1txs/50qNbzKio/fnMYObB7r3Q==

@@ -7,4 +7,12 @@ o Dayjs.cmi : cp ../bs/types/dayjs/src/Dayjs.cmi
 o Dayjs.cmj : cp ../bs/types/dayjs/src/Dayjs.cmj
 o Dayjs.cmt : cp ../bs/types/dayjs/src/Dayjs.cmt
 o Dayjs.res : cp ../../types/dayjs/src/Dayjs.res
-build install.stamp : touch Dayjs.cmi Dayjs.cmj 
+o Daterangepicker.cmi : cp ../bs/types/daterangepicker/src/Daterangepicker.cmi
+o Daterangepicker.cmj : cp ../bs/types/daterangepicker/src/Daterangepicker.cmj
+o Daterangepicker.cmt : cp ../bs/types/daterangepicker/src/Daterangepicker.cmt
+o Daterangepicker.res : cp ../../types/daterangepicker/src/Daterangepicker.res
+o Moment.cmi : cp ../bs/types/moment/Moment.cmi
+o Moment.cmj : cp ../bs/types/moment/Moment.cmj
+o Moment.cmt : cp ../bs/types/moment/Moment.cmt
+o Moment.res : cp ../../types/moment/Moment.res
+build install.stamp : touch Dayjs.cmi Dayjs.cmj Daterangepicker.cmi Daterangepicker.cmj Moment.cmi Moment.cmj 

@@ -1,0 +1,29 @@
+{
+  "name": "@retypes/daterangepicker",
+  "version": "0.0.56",
+  "description": "daterangepicker type binding for rescript",
+  "main": "src/Daterangepicker.res",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "bsconfig.json",
+    "src/**/*.res",
+    "src/**/*.resi"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nithin1506200/retypes.git#main"
+  },
+  "keywords": [
+    "dayjs",
+    "rescript",
+    "types"
+  ],
+  "author": "Nithin1506200",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nithin1506200/retypes/issues"
+  },
+  "homepage": "https://github.com/Nithin1506200/retypes/tree/main#readme"
+}
