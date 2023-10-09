@@ -16,12 +16,16 @@ module T = {
     | #y
     | #yy
   ]
-  type _calendarKey = [#someDay | #nextDay | #lastDay | #nextWeek | #lastWeek | #sameElse]
-  type _calendarKeyEnum = CalendarKey(_calendarKey) | String(string)
+
   /**
    * makeCalendarKey
    */
-  type calendarKey
+  module CalendarKey = {
+    type t
+    type calendarKey = [#someDay | #nextDay | #lastDay | #nextWeek | #lastWeek | #sameElse]
+    external fromString: string => t = "%identity"
+    external fromCalendarKey: calendarKey => t = "%identity"
+  }
   type longDateFormatKey = [
     | #LTS
     | #LT
@@ -49,7 +53,7 @@ module T = {
     milliseconds: float,
   }
   type locale = {
-    calendar: (~key: calendarKey=?, ~m: moment, ~now: moment) => string,
+    calendar: (~key: CalendarKey.t=?, ~m: moment, ~now: moment) => string,
     longDateFormatKey: (~key: longDateFormatKey) => string,
     invalidDate: unit => string,
     ordinal: (~n: float) => string,
@@ -97,16 +101,18 @@ module T = {
     doy?: int,
   }
 
-  type calendarSpecVal
-  //    = string | ((m?: MomentInput, now?: Moment) => string); //todo
-
+  module CalendarSpecVal = {
+    type t
+    external fromString: string => t = "%identity"
+    // external fromMoment:(~)
+  }
   type calendarSpec = {
-    "sameDay": calendarSpecVal,
-    "nextDay": calendarSpecVal,
-    "lastDay": calendarSpecVal,
-    "nextWeek": calendarSpecVal,
-    "lastWeek": calendarSpecVal,
-    "sameElse": calendarSpecVal,
+    "sameDay": CalendarSpecVal.t,
+    "nextDay": CalendarSpecVal.t,
+    "lastDay": CalendarSpecVal.t,
+    "nextWeek": CalendarSpecVal.t,
+    "lastWeek": CalendarSpecVal.t,
+    "sameElse": CalendarSpecVal.t,
   } // [x: string]: CalendarSpecVal | void; // undefined
   type relativeTimeSpecVal
   //  =
@@ -355,7 +361,16 @@ module T = {
     @as("E")
     _E?: numberlike,
   }
-  type momentInput //todo
+  module MomentInput = {
+    //todo
+    type t
+    external fromMoment: moment => t = "%identity"
+    external fromDate: Js.Date.t => t = "%identity"
+    external fromString: string => t = "%identity"
+    external fromInt: int => t = "%identity"
+    external fromFloat: float => t = "%identity"
+    external fromIntArray: array<int> => t = "%identity"
+  }
   // =
   // | Moment
   // | Date
@@ -365,10 +380,12 @@ module T = {
   // | MomentInputObject
   // | void; // null | undefined
   type fromTo = {
-    from: momentInput,
-    to: momentInput,
+    from: MomentInput.t,
+    to: MomentInput.t,
   }
-  type durationInputArg1 //todo
+  module DurationInputArg1 = {
+    type t
+  } //todo
   // =
   // | Duration
   // | number
@@ -380,14 +397,29 @@ module T = {
   type localeSpecifier //todo
   //   = string | Moment | Duration | string[] | boolean;
 }
-module Utils = {
-  module Identity = {
-    external calendarKeyIdentity: 'a => T.calendarKey = "%identity"
-  }
-  let makeCalendarKey: T._calendarKeyEnum => T.calendarKey = calendarKeyEnum => {
-    switch calendarKeyEnum {
-    | T.CalendarKey(c) => Identity.calendarKeyIdentity(c) //err
-    | T.String(s) => Identity.calendarKeyIdentity(s) // actual res
-    }
-  }
-}
+
+@module("moment")
+external moment: (
+  ~inp: T.MomentInput.t=?,
+  ~format: T.momentFormationSpecification=?,
+  ~language: string=?,
+  ~strict: bool=?,
+) => T.moment = "moment"
+@module("moment")
+external version: string = "version"
+
+@module("moment")
+external utc: (
+  ~inp: T.MomentInput.t=?,
+  ~format: T.momentFormationSpecification=?,
+  ~language: string,
+  ~strict: bool=?,
+) => T.moment = "utc"
+
+@module("moment")
+external unix: (~timestamp: float) => T.moment = "unix"
+
+// export function invalid(flags?: MomentParsingFlagsOpt): Moment;
+// export function isMoment(m: any): m is Moment;
+// export function isDate(m: any): m is Date;
+// export function isDuration(d: any): d is Duration;
