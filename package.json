@@ -9,5 +9,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "workspaces": [
+    "./types/*"
+  ]
 }
