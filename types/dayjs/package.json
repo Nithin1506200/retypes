@@ -1,13 +1,13 @@
 {
   "name": "@retypes/dayjs",
-  "version": "0.0.56",
+  "version": "0.0.57",
   "description": "dayjs type binding for rescript",
   "main": "src/Dayjs.res",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "bsconfig.json",
+    "rescript.json",
     "src/**/*.res",
     "src/**/*.resi"
   ],
@@ -20,6 +20,13 @@
     "rescript",
     "types"
   ],
+  "dependencies": {
+    "rescript": "11.1.1",
+    "@rescript/core": "^0.6.0"
+  },
+  "peerDependencies": {
+    "dayjs": "^1.10.4"
+  },
   "author": "Nithin1506200",
   "license": "ISC",
   "bugs": {
